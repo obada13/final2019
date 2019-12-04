@@ -19,24 +19,37 @@ avastd <-filter(avast,DrugUser=="yes")
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!These research will consider five different Sub group, First Every body in the data group, DrugUsers, Gays, Guys, gays. Each will be analise by Graphical Descriptive Result, Numerical Descriptive Results, and the Inferential Results. with these methods we will able to determine the effectiveness of the new drug (Abacavirinol) on each sub-group.
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and Gay (LGBTQ) contacting Aids.
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and Gay (LGBTQ) contacting Aids, The drug is effective on population that took it.
 
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+The following methods will be used in the reaseach. Graphical Descriptive Result, Bar chart will be use to show effectiveness of the treatment in percentage of the Gay (LGBTQ), Numerical Descriptive Results,will show the actual number of Gay(LGBTQ) that were treated or the number of Gay(LGBTQ) that took the New drug (abacavirinol) and Gay(LGBTQ) that took Placebo   and the Inferential Results. analysis the p-Value of the with these methods, the  confidence interval and the he estimated odds ratio. 
 
 #Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
-
 ## Descriptive Results
+
+Bar chart will be use for the descriptive reseach it will show resuit in percentage of the Gay(LGBTQ) population, this will show the effectiveness of the new drug on Gay(LGBTQ). 
 
 ### Graphical Descriptive Results
 ```{r}
 barchartGC(~infected + treatment,data=avastq,type="percent")
 ```
 
+The graphical resuit show ineffectiveness of new Aid drug (abacavirnol) on Gay(LGBTQ) population. from the numbers of Gay(LGBTQ) that took the drug about 72 percent of them that used the drug are infected by Aids comparid to 28 percent of Gay(LGBTQ) that used the Placebo. 
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and contacting Aids among Gay(LGBTQ).
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and been infected by Aids amonge Gay(LGBTQ), The drug is not effective on Gay(LGBTQ) that took it.
+
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
 
 ### Numerical Descriptive Results
 
@@ -48,6 +61,9 @@ table1 <- xtabs (~infected + treatment,data=avastq)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on Gay(LGBTQ) population. Among people that took the drug 72.38 were infected by Aid and 27.62 of Gay(LGBTQ) that used placebo have Aids. this show that the drug is not effective on Gay(LGBTQ) that use it.
+
 ## Inferential Results
   
 
@@ -57,7 +73,14 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ``` 
+Inferential Results show the effectiveness of the drug, Observed counts treatment show that 76 of Gay(LGBTQ) that took part in the experiment was infected with Aids comparid to 29 of the Gay(LGBTQ) that took Placebo. Also the P-Vallue= 2.998.which is greater that our convectionaL treashold OF 0.5 also the  confidence interval: 1.735490 4.369508, compaired to ratio 1:1  when Gay(LGBTQ) did not take the drug. So the new Drug (abacavirnol) is not effective per the experiment.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+The graphical resuit show the ineffectiveness of new Aid drug (abacavirnol) on Gay(LGBTQ) population. that Gay(LGBTQ) that took the drug 72 percent of them that used the drug are infected by Aids comparid to 28 percent of people that used the Placebo. 
+
+   Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on Gay(LGBTQ) population. Among people that took the drug 72.38 were infected by Aid and 27.62 of Gay(LGBTQ) that used placebo have Aids. this show that the drug is not effective on Gay(LGBTQ) that use it.
+   
+   Inferential Results show that the new drug is not effectiveness on Gay(LGBTQ) of Obsered counts treatment show that 76 of people that took part in the experiment have Aids comparid to 29 of the Gay(LGBTQ) with Placebo. Also the P-Vallue= 2.998. the  confidence interval:1.735490 4.369508, the estimated odds ratio = 2.720997 compaired to ratio 1 to 1 when they did not take the drug. The New drug (abacavirnol) has a positive relationship with Aids, it increase the chances of been infected by Aids . So the new Drug (abacavirnol) is not effective on Gay(LGBTQ) per the experiment.
+    

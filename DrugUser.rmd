@@ -19,17 +19,25 @@ avastd <-filter(avast,DrugUser=="yes")
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!. These research will consider five different Sub group, First Every body in the data group, DrugUsers, Gays, Guys, gays. Each will be analise by Graphical Descriptive Result, Numerical Descriptive Results, and the Inferential Results. with these methods we will able to determine the effectiveness of the new drug (Abacavirinol) on each sub-group.Thses Sub-gruop are the DrugUsers, 
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and DrugUsers been infected by Aids.
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and DrugUsers been infected by Aids, The drug is effective on population that took it.
 
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+The following methods will be used in the reaseach. Graphical Descriptive Result, Bar chart will be use to show effectiveness of the treatment in percentage of theDrugUsers, Numerical Descriptive Results,will show the actual number ofDrugUsers that were treated or the number of DrugUsers that took the New drug (abacavirinol) and people that took Placebo   and the Inferential Results. analysis the p-Value of the with these methods, the  confidence interval and the he estimated odds ratio. 
 
 #Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
+Bar chart will be use for the descriptive reseach it will show resuit in percentage of the DrugUsers, this will show the effectiveness of the new drug among the DrugUsers. 
+
 
 ### Graphical Descriptive Results
 ```{r}
@@ -38,16 +46,25 @@ barchartGC(~infected + treatment,data=avastd,type="percent")
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+The graphical resuit show effectiveness of new Aid drug (abacavirnol) on DrugUsers. people that took the drug only 25 percent of DrugUsers that used the drug are infected by Aids comparid to 75 percent of people that used the Placebo. 
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and contacting Aids.
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and DrugUsers been infected by Aids, The drug is effective on population that took it.
+
 ### Numerical Descriptive Results
 
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
 
 ```{r}
 table1 <- xtabs (~infected + treatment,data=avastd)
 rowPerc(table1)
 colPerc(table1)
 ```
+Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on general population. Among people that took the drug 40.89 were infected by Aid and 59.13 of people that used placebo have Aids. this show that the drug is effective on people that use it.
+
 ## Inferential Results
   
 
@@ -58,6 +75,14 @@ chisqtestGC(table1)
 fisher.test(table1)
 ``` 
 
+Inferential Results show the effectiveness of the drug, Observed counts treatment show that 34 of DrugUsers that took part in the experiment was infected with Aids comparid to 106 of the DrugUsers that took Placebo. Also the P-Vallue= 4.23e-08.which is lower that our convectionaL treashold OF 0.5 also the  confidence interval: 0.2308342 0.5294225, compaired to ratio 1:1  when they did not take the drug. So the new Drug (abacavirnol) is effective on DrugUsers per the experiment.
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The graphical resuit show effectiveness of new Aid drug (abacavirnol) on DrugUsers. that people that took the drug 25 percent of people that used the drug have Aids comparid to 75 percent of people that used the Placebo.
+   
+   Aslo Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on DrugUsers.  Among DrugUsers that took the drug 34 was infected by Aid and 106 of people that used placebo was infected by Aids. this show that the drug is effective on Drugusers that use it.
+   
+   Inferential Results show that the new drug is effectiveness of Obsered counts treatment show that 34 of Drugusers that took part in the experiment have Aids comparid to 75 of the people with Placebo. Also the P-Vallue= 4.23e-08. the  confidence interval:0.2308342 0.5294225, the estimated odds ratio =  0.3534128 compaired to ratio 1 to 1 when they did not take the drug. The New drug (abacavirnol) has relationship with Aids, it treduce the chances of DrugUsers been infected by Aids . So the new Drug (abacavirnol) is effective on DrugUsers per the experiment.

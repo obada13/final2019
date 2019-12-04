@@ -1,5 +1,5 @@
 ---
-title: "Aides Drug"
+title: "Gal  "
 author: "Bada!"
 date: "11, Novermber,2019"
 output: html_document
@@ -19,11 +19,18 @@ avastd <-filter(avast,DrugUser=="yes")
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!. These research will consider five different Sub group, First Every body in the data group, DrugUsers, Gays, Guys, gays. Each will be analise by Graphical Descriptive Result, Numerical Descriptive Results, and the Inferential Results. with these methods we will able to determine the effectiveness of the new drug (Abacavirinol) on each sub-group.
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and Sub Group contacting Aids.
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and Sub-group contacting Aids, The drug is effective on population that took it.
+
 
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+The following methods will be used in the reaseach. Graphical Descriptive Result, Bar chart will be use to show effectiveness of the treatment in percentage of the population Gal ( Females) in the experiment, Numerical Descriptive Results,will show the actualll number of Gal(Females) that were treated or the number of Gal(Females) loe that took the New drug (abacavirinol) and Gal(Females) that took Placebo   and the Inferential Results. analysis the p-Value of the with these methods, the  confidence interval and the he estimated odds ratio. 
 
 #Results
 
@@ -31,10 +38,17 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 
 ## Descriptive Results
 
+Bar chart will be use for the descriptive reseach it will show resuit in percentage of the Gal(Females) in the experiment, this will show the effectiveness of the new drug on females. 
+
 ### Graphical Descriptive Results
 ```{r}
 barchartGC(~infected + treatment,data=avastf,type="percent")
 ```
+The graphical resuit show effectiveness of new Aid drug (abacavirnol) on Gal(Females). Gal that took the drug only 31 percent of Gal(Females) that used the drug are infected by Aids comparid to 69 percent of Gal(Females) that used the Placebo. 
+
+$H_0$ There is no relationship between the use of new drug (abacavirno) and contacting Aids.
+
+$H_1$  There is relationship between the use of new drug (abacavirnol) and Aids, The drug is effective on Gal(Females) that took it.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
@@ -48,6 +62,9 @@ table1 <- xtabs (~infected + treatment,data=avastf)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on Gal(Females) population. Among people that took the drug 31.42 were infected by Aid and 68.58 of people that used placebo have Aids. this show that the drug is effective on people that use it.
+
 ## Inferential Results
   
 
@@ -57,7 +74,14 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ``` 
+Inferential Results show the effectiveness of the drug, Observed counts treatment show that 213 of Gal(Females) that took part in the experiment was infected with Aids comparid to 465 of the Gal(Females) with Placebo. Also the P-Vallue= 0.which is lower that our convectionaL treashold Of 0.5 also the  confidence interval: 0.3798342 0.5345407, compaired to ratio 1:1  when they did not take the drug. So the new Drug (abacavirnol) is effective on Gal(Female) per the experiment.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+The graphical resuit show effectiveness of new Aid drug (abacavirnol) on Gal(Females) population. that people that took the drug 31 percent of Gal(Females) that used the drug have Aids comparid to 69 percent of Gal(Females) that used the Placebo.
+   
+   Aslo Numerical Descriptive Results show effectiveness of new Aid drug (abacavirnol) on Gal(Females) From population of Gal(Females) that took the drug 213 was infected by Aid and 465 of Gal(Females) that used placebo was infected by Aids. this show that the drug is effective on Gal(Females) that use it.
+   
+   Inferential Results show that the new drug is effectiveness of Obsered counts treatment show that 213 of Gal (Females) that took part in the experiment have Aids comparid to 465 of the Gal (Females) that took Placebo. Also the P-Vallue= 2.2 the  confidence interval:0.3798342 0.5345407, the estimated odds ratio = 0.4511536 compaired to ratio 1:1 when they did not take the drug. The New drug (abacavirnol) has relationship with Aids on Gal (Females) Sub_Group, it reduce the chances of been infected by Aids . So the new Drug (abacavirnol) is effective on Gal (Females) Sub_Group per the experiment.
+    
